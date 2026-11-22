@@ -56,7 +56,7 @@ https://betanyc.github.io/<repo>/?precinct=034#coverage
 The page aims for WCAG 2.2 AA. On 2026-11-22 it had no failures in [axe](https://github.com/dequelabs/axe-core) 4.10 at 390px and 1200px wide, with the menu open and closed. What is built in:
 
 - A skip link, and page regions screen readers can jump between: the top bar is the `<header>`, the links are a `<nav>`, and everything from the opening section on is in `<main>`.
-- The **Menu** button reports whether it is open (`aria-expanded`), closes on Escape, and works by keyboard. Every link and button shows an orange focus ring.
+- The **Menu** button reports whether it is open (`aria-expanded`), closes on Escape, and works by keyboard. Every link and button shows a focus ring: BetaNYC Blue on the page, light blue on the blue bar, both at least 3:1.
 - Text colors pass 4.5:1 contrast. Tap targets in the phone menu are at least 44px tall.
 - Smooth scrolling is turned off for people who set their device to reduce motion.
 - A chart area that can be wider than the screen can take keyboard focus, so it can be scrolled with arrow keys.
