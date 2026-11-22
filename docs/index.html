@@ -22,33 +22,36 @@
 <meta property="og:image:alt" content="Describe the picture on the card."><!-- REPLACE -->
 <meta name="twitter:card" content="summary_large_image">
 <script src="assets/share.js" defer></script>
+<script src="assets/nav.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<div class="site-bar">
+<header class="site-bar">
   <div class="wrap">
     <a class="home" href="./"><img src="assets/betanyc-wordmark-white.svg" alt="BetaNYC" width="78" height="26"><span>Project name</span></a><!-- REPLACE -->
-    <nav aria-label="Site">
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-menu" hidden><svg aria-hidden="true" focusable="false" viewBox="0 0 20 20"><path d="M2 4h16M2 10h16M2 16h16" stroke="currentColor" stroke-width="2" fill="none"/></svg>Menu</button>
+    <nav id="site-menu" aria-label="Site">
       <a href="#about">About</a>
       <a href="https://github.com/BetaNYC/REPO">GitHub</a><!-- REPLACE -->
     </nav>
   </div>
-</div>
+</header>
 
-<header class="hero">
+<main id="main">
+
+<div class="hero">
   <div class="wrap">
     <span class="tag">BetaNYC · open data</span>
     <h1>Say what this is in one line</h1><!-- REPLACE -->
     <p class="lede">Open with the problem, in the reader's terms, then what this project does about it. Two or three sentences.</p><!-- REPLACE -->
     <p class="hero-meta">Data from <a href="#">the publisher's page</a>. Updated <time datetime="2026-01-01">January 1, 2026</time>.</p><!-- REPLACE -->
   </div>
-</header>
+</div>
 
-<main id="main">
 <div class="wrap">
 
-<div class="stats" aria-label="Key numbers">
+<div class="stats" role="group" aria-label="Key numbers">
   <div class="stat"><div class="n">1,234</div><div class="l">What this number counts</div></div>
   <div class="stat"><div class="n">56</div><div class="l">What this number counts</div></div>
 </div>
@@ -64,7 +67,7 @@
       <button class="copy-link" type="button" data-anchor="chart-figure">Copy link</button>
     </div>
   </div>
-  <div class="figure-body" id="chart-body">Chart goes here.</div>
+  <div class="figure-body" tabindex="0" role="group" aria-label="Chart" id="chart-body"><!-- REPLACE the label with the chart's title. tabindex lets keyboard users scroll a chart wider than the screen. -->Chart goes here.</div>
   <figcaption class="figure-caption">Source: <a href="#">Publisher, dataset name</a>. Say what BetaNYC changed, if anything.</figcaption>
 </figure>
 
