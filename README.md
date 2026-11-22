@@ -26,6 +26,7 @@ Then:
 |---|---|
 | `docs/index.html` | The page: top bar, opening section, number tiles, a shareable figure, an About section and the footer |
 | `docs/assets/site.css` | Shared styles. Copy it as is, so it can be updated across sites; put page-specific styles in the page. |
+| `docs/assets/nav.js` | The **Menu** button (burger) on the right of the top bar below 782px wide, as on BetaNYC's other sites. Copy it as is. |
 | `docs/assets/share.js` | Keeps a chart's view (a precinct, a year) in the page address, and wires the **Copy link** buttons |
 | `docs/assets/social-card.html` | The picture social sites show when the link is posted |
 | `docs/assets/favicon.svg`, `betanyc-wordmark-*.svg` | BetaNYC logos, from the brand guide |
@@ -49,6 +50,23 @@ https://betanyc.github.io/<repo>/?precinct=034#coverage
 - **Accessible by default:** keep the skip link, alt text on every image, a text table or summary beside every chart, and the focus outline.
 - **Works on a phone:** test at 375 px wide. Wide tables and charts scroll inside their own box, never the page.
 - **Links to files, never to folders.** GitHub Pages serves `docs/guide.html`, not `docs/guide/`.
+
+## Accessibility
+
+The page aims for WCAG 2.2 AA. On 2026-11-22 it had no failures in [axe](https://github.com/dequelabs/axe-core) 4.10 at 390px and 1200px wide, with the menu open and closed. What is built in:
+
+- A skip link, and page regions screen readers can jump between: the top bar is the `<header>`, the links are a `<nav>`, and everything from the opening section on is in `<main>`.
+- The **Menu** button reports whether it is open (`aria-expanded`), closes on Escape, and works by keyboard. Every link and button shows a focus ring: BetaNYC Blue on the page, light blue on the blue bar, both at least 3:1.
+- Text colors pass 4.5:1 contrast. Tap targets in the phone menu are at least 44px tall.
+- Smooth scrolling is turned off for people who set their device to reduce motion.
+- A chart area that can be wider than the screen can take keyboard focus, so it can be scrolled with arrow keys.
+
+What each site still has to do:
+
+- Give every chart a text alternative: a summary in its caption and, where it helps, the numbers as a table.
+- Replace the chart area's `aria-label` with the chart's title.
+- Keep the shapes and colors that carry meaning in a chart at 3:1 contrast or better against the page, or say the same thing another way (a pattern, a label, the table).
+- Run axe on the finished page before launch.
 
 ## License
 
