@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- REPLACE every line marked REPLACE. Search this file for it before publishing. -->
+<title>Project name: what it does in a few words</title><!-- REPLACE -->
+<meta name="description" content="One or two plain sentences: what this is and who it is for. Built by BetaNYC."><!-- REPLACE -->
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="canonical" href="https://betanyc.github.io/REPO/"><!-- REPLACE -->
+<!-- Social preview. The image must be an absolute URL, 1200 x 630 PNG.
+     Make it from assets/social-card.html (see README). -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BetaNYC">
+<meta property="og:title" content="Project name: what it does in a few words"><!-- REPLACE -->
+<meta property="og:description" content="One or two plain sentences."><!-- REPLACE -->
+<meta property="og:url" content="https://betanyc.github.io/REPO/"><!-- REPLACE -->
+<meta property="og:image" content="https://betanyc.github.io/REPO/assets/og-image.png"><!-- REPLACE -->
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Describe the picture on the card."><!-- REPLACE -->
+<meta name="twitter:card" content="summary_large_image">
+<script src="assets/share.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="site-bar">
+  <div class="wrap">
+    <a class="home" href="./"><img src="assets/betanyc-wordmark-white.svg" alt="BetaNYC" width="78" height="26"><span>Project name</span></a><!-- REPLACE -->
+    <nav aria-label="Site">
+      <a href="#about">About</a>
+      <a href="https://github.com/BetaNYC/REPO">GitHub</a><!-- REPLACE -->
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">BetaNYC · open data</span>
+    <h1>Say what this is in one line</h1><!-- REPLACE -->
+    <p class="lede">Open with the problem, in the reader's terms, then what this project does about it. Two or three sentences.</p><!-- REPLACE -->
+    <p class="hero-meta">Data from <a href="#">the publisher's page</a>. Updated <time datetime="2026-01-01">January 1, 2026</time>.</p><!-- REPLACE -->
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+
+<div class="stats" aria-label="Key numbers">
+  <div class="stat"><div class="n">1,234</div><div class="l">What this number counts</div></div>
+  <div class="stat"><div class="n">56</div><div class="l">What this number counts</div></div>
+</div>
+
+<h2 id="chart">A shareable chart <a class="anchor" href="#chart" aria-label="Link to this section">#</a></h2>
+<p>Say what the chart shows and what to look for, before the chart.</p>
+
+<figure class="figure" id="chart-figure">
+  <div class="figure-head">
+    <h3>Chart title</h3>
+    <div class="figure-controls">
+      <label>Show <select id="pick"><option value="">Everything</option><option value="a">Option A</option></select></label>
+      <button class="copy-link" type="button" data-anchor="chart-figure">Copy link</button>
+    </div>
+  </div>
+  <div class="figure-body" id="chart-body">Chart goes here.</div>
+  <figcaption class="figure-caption">Source: <a href="#">Publisher, dataset name</a>. Say what BetaNYC changed, if anything.</figcaption>
+</figure>
+
+<h2 id="about">About <a class="anchor" href="#about" aria-label="Link to this section">#</a></h2>
+<p>Why BetaNYC built this, where the data comes from, how often it updates, and what it cannot tell you.</p>
+
+<div class="note"><b>Not an official record.</b> Say plainly whether BetaNYC changed the data, and link the official source.</div>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="wordmark" src="assets/betanyc-wordmark-blue.svg" alt="BetaNYC" width="90" height="30">
+    <p><strong>Project name</strong> is built by <a href="https://beta.nyc">BetaNYC</a>, a project of the Fund for the City of New York. <a href="https://github.com/BetaNYC/REPO">Source code on GitHub</a>. Found a mistake? <a href="https://github.com/BetaNYC/REPO/issues">Tell us</a>.</p><!-- REPLACE -->
+    <p class="small">Data: <a href="#">Publisher</a>. The code is MIT licensed; the license covers the code, not the publisher's data.</p><!-- REPLACE -->
+  </div>
+</footer>
+
+<script>
+// Example of a shareable view. Delete this block if the page has no chart controls.
+document.addEventListener("DOMContentLoaded", () => {
+  const pick = document.getElementById("pick");
+  function render(view) {
+    pick.value = view.show;
+    document.getElementById("chart-body").textContent = view.show ? "Showing " + view.show : "Showing everything";
+  }
+  const view = Share.read({ show: "" });
+  render(view);
+  pick.addEventListener("change", () => { Share.write({ show: pick.value }); render(Share.read()); });
+  Share.onChange(render);
+  Share.copyButtons();
+});
+</script>
+</body>
+</html>
